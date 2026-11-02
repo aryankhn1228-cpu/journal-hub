@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Research Academy – Journal Repository & Publishing Support</title>
+<meta name="description" content="Journal hosting, peer review support and indexing help for researchers and institutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10253a; --muted:#516375; --paper:#f6f8f9; --panel:#ffffff;
+  --line:#d5dde3; --green:#0a6e55; --green-ink:#ffffff; --red:#d6322e;
+  --serif:"Newsreader",Georgia,serif; --sans:"Public Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#e9eff4;--muted:#9fb1c0;--paper:#0e1a26;--panel:#142435;--line:#26394b;--green:#3fc79e;--green-ink:#06231b}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font:600 20px var(--serif);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:14px;height:14px;border-radius:50%;background:var(--red);display:inline-block;box-shadow:0 0 0 5px var(--green)}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
+h1{font-size:clamp(34px,6vw,60px);max-width:16ch}
+h2{font-size:clamp(26px,4vw,36px);margin-bottom:12px}
+h3{font-size:20px;margin-bottom:4px}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.lead{font-size:19px;color:var(--muted);max-width:56ch;margin:20px 0 0}
+.btn{display:inline-block;background:var(--green);color:var(--green-ink);padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:600;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+
+/* hero + catalogue */
+.hero{display:grid;grid-template-columns:1fr;gap:40px;padding-top:64px}
+.catalogue{background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.catalogue-head{display:flex;gap:12px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.catalogue-head label{font-weight:600;white-space:nowrap}
+.catalogue-head input{flex:1;min-width:0;padding:10px 12px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+#journal-list{list-style:none;margin:0;padding:0;max-height:420px;overflow:auto}
+#journal-list li{border-bottom:1px solid var(--line)}
+#journal-list li:last-child{border-bottom:0}
+#journal-list a{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;text-decoration:none}
+#journal-list a:hover{background:var(--paper)}
+.j-name{font:600 18px/1.3 var(--serif)}
+.j-issn{color:var(--muted);font-size:14px;text-align:right;white-space:nowrap}
+.empty{padding:20px 18px;color:var(--muted)}
+@media(min-width:900px){.hero{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* services */
+.services{display:grid;gap:0;margin-top:32px}
+.services div{padding:22px 0;border-top:1px solid var(--line);display:grid;gap:6px}
+.services p{margin:0;color:var(--muted);max-width:60ch}
+@media(min-width:800px){.services div{grid-template-columns:300px 1fr;gap:32px}}
+
+/* about */
+.two{display:grid;gap:32px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+.two p{color:var(--muted);margin:8px 0 0}
+
+/* contact */
+form{display:grid;gap:14px;max-width:520px;margin-top:24px}
+form label{display:grid;gap:6px;font-weight:500;font-size:15px}
+form input,form textarea{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+.contact-grid{display:grid;gap:40px}
+@media(min-width:800px){.contact-grid{grid-template-columns:1fr 1fr}}
+address{font-style:normal;color:var(--muted);margin-top:16px}
+footer{padding:32px 0;color:var(--muted);font-size:14px}
+@media(max-width:640px){nav{gap:14px;font-size:14px}.brand span{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"></i><span>Your Research Academy</span></a>
+    <nav aria-label="Main">
+      <a href="#journals">Journals</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap" id="journals">
+    <div>
+      <h1>Find a journal. Publish with support.</h1>
+      <p class="lead">We host journals, manage peer review and help research reach international readers.</p>
+      <p style="margin-top:28px"><a class="btn" href="#contact">Start a journal</a></p>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-head">
+        <label for="q">Search journals</label>
+        <input id="q" type="search" placeholder="Name or ISSN" autocomplete="off">
+      </div>
+      <ul id="journal-list"></ul>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>What we do for journals</h2>
+      <div class="services">
+        <div><h3>Journal hosting</h3><p>A managed site for your journal with online submission, review and publishing.</p></div>
+        <div><h3>Peer review and editing</h3><p>Reviewer matching, editorial workflow support, and language and structure checks.</p></div>
+        <div><h3>Indexing and visibility</h3><p>Help with ISSN, DOI and Crossref registration, Google Scholar and other databases.</p></div>
+        <div><h3>Training</h3><p>Workshops on research methods, manuscript writing and publishing practice.</p></div>
+        <div><h3>Conferences and webinars</h3><p>Events that connect local researchers with international colleagues.</p></div>
+        <div><h3>Consulting for institutions</h3><p>Planning, launching and growing a journal for your university or society.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap two">
+      <div>
+        <h2>Mission</h2>
+        <p>Build a catalogue of journals across disciplines and share the work of our researchers with readers worldwide.</p>
+      </div>
+      <div>
+        <h2>Vision</h2>
+        <p>Become the first place readers look for research from our country, with a record that lasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Contact us</h2>
+        <address>
+          Your address line, City, Country<br>
+          <a href="tel:+000000000000">+00 0000 000 000</a><br>
+          <a href="mailto:info@example.org">info@example.org</a>
+        </address>
+      </div>
+      <form id="contact-form">
+        <label>Your name <input name="name" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Message <textarea name="message" rows="4" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Your Research Academy. All rights reserved.</div>
+</footer>
+
+<script>
+/* EDIT THIS LIST: add, remove or rename your journals. */
+const journals = [
+  {name:"Journal of Example Medicine", issn:"0000-0001", url:"https://example.org/jem"},
+  {name:"Journal of Example Nursing", issn:"0000-0002", url:"https://example.org/jen"},
+  {name:"Journal of Example Nutrition", issn:"0000-0003", url:"https://example.org/jenu"},
+  {name:"Journal of Example Surgery", issn:"0000-0004", url:"https://example.org/jes"},
+  {name:"Journal of Example Education", issn:"0000-0005", url:"https://example.org/jee"}
+];
+
+const list = document.getElementById("journal-list");
+const q = document.getElementById("q");
+
+function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function render(term=""){
+  const t = term.trim().toLowerCase();
+  const hits = journals.filter(j => (j.name+" "+j.issn).toLowerCase().includes(t));
+  list.innerHTML = hits.length
+    ? hits.map(j => `<li><a href="${esc(j.url)}" target="_blank" rel="noopener"><span class="j-name">${esc(j.name)}</span><span class="j-issn">eISSN ${esc(j.issn)}</span></a></li>`).join("")
+    : `<li class="empty">No journal matches “${esc(term)}”. Try a shorter name.</li>`;
+}
+q.addEventListener("input", e => render(e.target.value));
+render();
+
+/* Contact form opens the visitor's email app. Replace with Formspree/Netlify Forms for real submissions. */
+document.getElementById("contact-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const body = encodeURIComponent(`${f.get("message")}\n\nFrom: ${f.get("name")} (${f.get("email")})`);
+  location.href = `mailto:info@example.org?subject=Website%20enquiry&body=${body}`;
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
